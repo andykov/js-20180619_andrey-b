@@ -12,8 +12,10 @@ function print (text) {
  * чтобы функция sayHello работала корректно
  */
 function isValid (name) {
-    if (name != null && name.indexOf(' ') < 0 && name.length >= 4) {
-        return name;
+    if (String(name).length > 0 && String(name).indexOf(' ') < 0 && String(name).length >= 4) {
+        return true;
+    } else {
+        return false;
     }
 }
 
