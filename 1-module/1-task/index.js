@@ -5,11 +5,7 @@
  * @returns {number}
  */
 function pow (m, n) {
-    // var result = m
-    return alert(Math.pow(m, n));
+    return Math.pow(Number(m), Number(n).toFixed(0));
 }
 
-var x = prompt('Введите число:');
-var n = prompt('Введите степень:');
-
-pow(x, n);
+pow(prompt('Введите число:'), prompt('Введите степень:'));
