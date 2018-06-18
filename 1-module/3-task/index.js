@@ -9,20 +9,14 @@
 var inputData = '1, -5.8 или 10, хотя 34 + -5.3 и 73';
 
 function getMinMax(str) {
-    var arr = str.split(' ');
-    for (var i = 0; i < arr.length; ++i) {
-        // console.log(parseInt(arr[i]));
-        // console.log(isNaN(arr[i]));
-        // console.log(!isNaN(parseFloat(arr[i])) && isFinite(arr[i]));
+    var arr = str.match(/-?\d+(\.\d+)?/g).map(function (n) {
+        return +n;
+    });
 
-        // if (parseInt(parseFloat(arr[i]))) {
-        //     console.log(arr[i]);
-        // }
+    var min = Math.min.apply(null, arr);
+    var max = Math.max.apply(null, arr);
 
-        if (!isNaN(parseInt(arr[i]))) {
-            console.log(arr[i]);
-        }
-    }
+    return {min, max}
 }
 
 console.log(getMinMax(inputData)); // ожидается [-5.8, 73]
